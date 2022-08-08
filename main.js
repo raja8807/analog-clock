@@ -4,6 +4,7 @@ let outer = document.querySelector(".outer")
 
 
 // large Bars
+
 let angle = 0;
 for (let i = 1; i <= 5; i++) {
     angle = angle + 30;
@@ -31,22 +32,27 @@ for (let i = 1; i <= 28; i++) {
     }
 }
 
-// 
+// Set Time 
+
 let generateBtn = document.getElementById("generateBtn")
 let minHand = document.getElementById("minute-hand-holder")
 let hourHand = document.getElementById("hour-hand-holder")
 
 let hourOut = document.getElementById("hourOut")
-let MinOut = document.getElementById("minrOut")
+let MinOut = document.getElementById("minOut")
 
 
 function setTime() {
 
-    let min = Math.floor(Math.random() * 60)
-    // console.log(min);
-    let hour = Math.floor(Math.random() * 12);
+  let min = Math.floor(Math.random() * 60)
+  let hour = Math.floor(Math.random() * 12);
+  
+  //let time = new Date()
+//  let min = time.getMinutes()
+//  let hour = time.getHours()
     let minAngle = min * 6
     let hourAngle = (hour * 60 + min) * 0.5;
+    
 
     minHand.style.transform = "rotate(" + minAngle + "deg)"
     hourHand.style.transform = "rotate(" + hourAngle + "deg)"
@@ -69,7 +75,4 @@ function setTime() {
 }
 
 generateBtn.addEventListener("click", setTime)
-
-// let min = Math.floor(Math.random()*(60))
-// console.log(min);
 
